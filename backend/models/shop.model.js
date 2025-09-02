@@ -1,20 +1,9 @@
 import mongoose from "mongoose";
 
-const shopSchema=new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
-    },
-    image:{
-        type:String,
-    },
-    city:{
-        type:String,
-        required:true
-    },
-    state: { 
+const shopSchema = new mongoose.Schema({
+    name: {
         type: String,
-        required:true
+        required: true
     },
    address:{
      type: String,

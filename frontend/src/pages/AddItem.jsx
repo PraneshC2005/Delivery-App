@@ -129,19 +129,21 @@ navigate("/")
           )}
         </div>
 
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">Type</label>
-          <select
-            name="type"
-            value={type}
-            onChange={(e)=>setType(e.target.value)}
-            required
-            className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#ff4d2d] focus:outline-none"
-          >
-            <option value="veg">veg</option>
-            <option value="non veg">non veg</option>
-          </select>
-        </div>
+        {category === "Food" && (
+          <div>
+            <label className="block text-gray-700 font-medium mb-1">Type</label>
+            <select
+              name="type"
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+              required
+              className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#ff4d2d] focus:outline-none"
+            >
+              <option value="veg">veg</option>
+              <option value="non veg">non veg</option>
+            </select>
+          </div>
+        )}
 
         <button
           type="submit"

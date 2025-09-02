@@ -40,10 +40,14 @@ const itemSchema = new mongoose.Schema(
       average: { type: Number, default: 0 },
       count: { type: Number, default: 0 }
     },
-    type:{
-     type: String,
-     enum:["veg","non veg"]
-  }
+    type: {
+      type: String,
+      enum: ["veg", "non veg"],
+      required: function() {
+        return this.category === "Food";
+      },
+      default: undefined
+    }
   },
   
   { timestamps: true }
