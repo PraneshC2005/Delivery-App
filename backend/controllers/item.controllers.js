@@ -52,10 +52,10 @@ export const getItemsByShop=async (req,res)=>{
         const items=await Item.find({shop:shopId})
         console.log("Items" , items)
 
-        if(!items.length){
-           return res.status(400).json({message:"this shop does not have food items"}) 
-        }
-        return res.status(200).json(items)
+          if(!items.length){
+              return res.status(400).json({message:"This shop does not have any items."}) 
+          }
+          return res.status(200).json(items)
     } catch (error) {
          return res.status(500).json({message:`get item error ${error}`})
     }

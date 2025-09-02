@@ -19,17 +19,14 @@ const itemSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-       enum: [
-        "Snacks",
-        "Main Course",
-        "Desserts",
-        "Pizza",
-        "Burgers",
-        "Sandwiches",
-        "South Indian",
-        "North Indian",
-        "Chinese",
-        "Fast Food",
+      enum: [
+        "Grocery",
+        "Stationary",
+        "Food",
+        "Dairy",
+        "Beverages",
+        "Personal Care",
+        "Household",
         "Others"
       ]
     },
@@ -45,10 +42,14 @@ const itemSchema = new mongoose.Schema(
       average: { type: Number, default: 0 },
       count: { type: Number, default: 0 }
     },
-    type:{
-     type: String,
-     enum:["veg","non veg"]
-  }
+    type: {
+      type: String,
+      enum: ["veg", "non veg"],
+      required: function() {
+        return this.category === "Food";
+      },
+      default: undefined
+    }
   },
   
   { timestamps: true }
