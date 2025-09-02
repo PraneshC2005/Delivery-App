@@ -12,7 +12,11 @@ const deliveryAssignmentSchema = new mongoose.Schema({
     default: "broadcasted"
   },
   acceptedAt: Date,
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
+  ratings: {
+    type: [Number],
+    default: [],
+  },
 });
 
 const DeliveryAssignment = mongoose.model("DeliveryAssignment", deliveryAssignmentSchema);

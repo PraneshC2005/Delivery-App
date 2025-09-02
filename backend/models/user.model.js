@@ -16,9 +16,13 @@ const userSchema = new mongoose.Schema({
     mobile: {
         type: String
     },
-    role: {
-        type: String, enum: ['user', 'owner', 'deliveryBoy'], required: true
-    },
+        role: {
+                type: String, enum: ['user', 'owner', 'deliveryBoy'], required: true
+        },
+        ratings: {
+            type: [Number],
+            default: [],
+        },
     resetOtp: {
         type: String
     },

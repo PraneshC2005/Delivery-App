@@ -19,19 +19,14 @@ const itemSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-       enum: [
-        "Snacks",
-        "Main Course",
-        "Desserts",
-        "Pizza",
-        "Burgers",
-        "Sandwiches",
-        "South Indian",
-        "North Indian",
-        "Chinese",
-        "Fast Food",
-        "Others"
-      ]
+      enum: [
+        "grocery",
+        "food",
+        "stationary",
+        "dairy",
+        "others"
+      ],
+      default: "grocery"
     },
     image: {
       type: String, // Image URL

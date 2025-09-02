@@ -25,13 +25,19 @@ const shopSchema=new mongoose.Schema({
     ref:"User",
     required:true
    },
-   items:[
-    {
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"Item"
-   } ],
-   
- 
+     items:[
+        {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Item"
+     } ],
+     ratings: {
+         type: [Number],
+         default: [],
+     },
+     reviews: [{
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'Review',
+     }],
 },{timestamps:true})
 
 

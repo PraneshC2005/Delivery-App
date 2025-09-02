@@ -74,7 +74,7 @@ updateLocation()
       <Route path='/pending-orders' element={userData?<PendingOrders/>:<Navigate to={"/signin"}/>}/>
         <Route path='/my-delivered-orders' element={userData?<MyDeliveredOrders/>:<Navigate to={"/signin"}/>}/>
       <Route path='/track-order/:orderId' element={userData?<TrackOrderPage/>:<Navigate to={"/signin"}/>}/>
-      <Route path='/shop-items/:shopId' element={userData?<ShopItems/>:<Navigate to={"/signin"}/>}/>
+      <Route path='/tems/:shopIdshop-i' element={userData?<ShopItems/>:<Navigate to={"/signin"}/>}/>
    </Routes>
   )
 }

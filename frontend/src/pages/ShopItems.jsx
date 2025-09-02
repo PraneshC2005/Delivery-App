@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { serverUrl } from "../App";
 import FoodCard from "../components/FoodCard";
+import ShopReviewSection from "../components/ShopReviewSection";
 import { FaMapMarkerAlt, FaUtensils, FaStoreAlt, FaArrowLeft } from "react-icons/fa";
 
 
@@ -96,6 +97,8 @@ function ShopItems() {
               {shop.address || "Address not available"}
             </p>
           </div>
+          {/* Shop Review Section */}
+          <ShopReviewSection shopId={shop._id} />
         </div>
       )}
 

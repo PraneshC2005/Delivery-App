@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, updateQuantity } from "../redux/userSlice";
+import ItemReviewSection from "./ItemReviewSection";
 
 function FoodCard({ data }) {
   const [quantity, setQuantity] = useState(0);
@@ -76,6 +77,10 @@ const handleIncrease = () => {
           alt={data.name}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
+      </div>
+      {/* Item Review Section */}
+      <div className="mt-2">
+        <ItemReviewSection itemId={data._id} />
       </div>
 
       {/* Content */}

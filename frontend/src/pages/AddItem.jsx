@@ -23,17 +23,11 @@ const [name, setName] = useState("")
 const navigate=useNavigate()
 const dispatch=useDispatch()
   const categories = [
-    "Snacks",
-    "Main Course",
-    "Desserts",
-    "Pizza",
-    "Burgers",
-    "Sandwiches",
-    "South Indian",
-    "North Indian",
-    "Chinese",
-    "Fast Food",
-    "Others",
+    "grocery",
+    "food",
+    "stationary",
+    "dairy",
+    "others"
   ];
 
   const handleImage=(e)=>{
@@ -70,7 +64,7 @@ navigate("/")
         className="bg-white border border-[#ff4d2d33] shadow-lg rounded-xl p-8 max-w-lg w-full space-y-6"
       >
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
-          Add New Food Item
+          Add New Item
         </h2>
 
         <div>
