@@ -13,7 +13,7 @@ import { setShop, setSocket } from './redux/userSlice'
 import getCurrentShop from './hooks/getCurrentShop'
 
 import AddItem from './pages/AddItem'
-import EditItem from './pages/editItem'
+import EditItem from './pages/EditItem'
 import getShopsByCity from './hooks/getShopsByCity'
 import getItemsByCity from './hooks/getItemsByCity'
 import CartPage from './pages/CartPage'
@@ -66,7 +66,7 @@ updateLocation()
     <Route path='/' element={userData?<Home/>:<Navigate to={"/signin"}/>}/>
      <Route path='/editshop' element={userData?<EditShop/>:<Navigate to={"/signin"}/>}/>
       <Route path='/additem' element={userData?<AddItem/>:<Navigate to={"/signin"}/>}/>
-       <Route path='/edititem/:itemId' element={userData?<EditItem/>:<Navigate to={"/signin"}/>}/>
+  <Route path='/edititem/:itemId' element={userData?<EditItem/>:<Navigate to={"/signin"}/>}/>
      <Route path='/cart' element={userData?<CartPage/>:<Navigate to={"/signin"}/>}/>
      <Route path='/checkout' element={userData?<CheckoutPage/>:<Navigate to={"/signin"}/>}/>
       <Route path='/order-placed' element={userData?<OrderPlaced/>:<Navigate to={"/signin"}/>}/>
@@ -74,7 +74,7 @@ updateLocation()
       <Route path='/pending-orders' element={userData?<PendingOrders/>:<Navigate to={"/signin"}/>}/>
         <Route path='/my-delivered-orders' element={userData?<MyDeliveredOrders/>:<Navigate to={"/signin"}/>}/>
       <Route path='/track-order/:orderId' element={userData?<TrackOrderPage/>:<Navigate to={"/signin"}/>}/>
-      <Route path='/tems/:shopIdshop-i' element={userData?<ShopItems/>:<Navigate to={"/signin"}/>}/>
+  <Route path='/shop-items/:shopId' element={userData?<ShopItems/>:<Navigate to={"/signin"}/>}/>
    </Routes>
   )
 }
