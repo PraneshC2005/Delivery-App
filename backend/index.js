@@ -18,14 +18,20 @@ const app=express()
 const server=http.createServer(app)
 const io=new Server(server,{
      cors: {
-    origin: "https://delivery-app-caf9.vercel.app", // production में specific domain डालना
+    origin: [
+      "https://delivery-app-caf9.vercel.app",
+      "https://delivery-app-seven-eta.vercel.app"
+    ],
     methods: ["GET", "POST"],
     credentials: true  
   }
 })
 app.set("io", io);
 app.use(cors({
-    origin:"https://delivery-app-caf9.vercel.app",
+    origin: [
+      "https://delivery-app-caf9.vercel.app",
+      "https://delivery-app-seven-eta.vercel.app"
+    ],
     credentials:true
 }))
 app.use(express.json())
