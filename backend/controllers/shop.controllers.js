@@ -28,15 +28,16 @@ export const addShop = async (req, res) => {
                 image,
                 state,
                 address,
-                category,
                 owner: req.userId
             });
         } else {
+
+            console.log(req.body , "Edit --------------------------")
             shop.name = name;
             if (image) shop.image = image;
             shop.city = city;
             shop.address = address;
-            if (category) shop.category = category;
+            shop.state = state
             await shop.save();
         }
         await shop.populate("owner");
